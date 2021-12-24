@@ -1,9 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapsActivity" />
+    tools:context=".MapsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="314dp"
+            android:layout_height="50dp"
+            android:id="@+id/location_search"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"
+            android:hint="Bucar"
+            android:textColorHint="@android:color/darker_gray"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="onClick"
+            android:text="Buscar"
+            android:id="@+id/search_address"/>
+    </RelativeLayout>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        tools:context=".MapsActivity" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/second_relative_layout">
+
+        <Button
+            android:id="@+id/hospitals_nearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="67dp"
+            android:layout_marginBottom="0dp"
+            android:onClick="onClick"
+            android:text="Hospitals" />
+
+        <Button
+            android:id="@+id/schools_nearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/hospitals_nearby"
+            android:onClick="onClick"
+            android:text="Schools" />
+
+        <Button
+            android:id="@+id/restaurants_nearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginBottom="-1dp"
+            android:layout_toEndOf="@+id/schools_nearby"
+            android:onClick="onClick"
+            android:text="Restaurants" />
+
+    </RelativeLayout>
+</RelativeLayout>
+
